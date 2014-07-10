@@ -139,7 +139,7 @@ module.exports = yeoman.generators.Base.extend({
     );
 
     // wire Bootstrap plugins
-    if (this.includeBootstrap && !this.includeSass) {
+    if (this.includeWoocss && !this.includeSass) {
       var bs = 'bower_components/woojs/';
 
       this.indexFile = this.appendFiles({
