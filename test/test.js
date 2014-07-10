@@ -120,7 +120,7 @@ describe('Webapp generator', function () {
     });
 
     it('creates expected bootstrap components', function (done) {
-      runGen.withOptions(options).withPrompt({features: ['includeBootstrap']})
+      runGen.withOptions(options).withPrompt({features: ['includeWoocss']})
       .on('end', function () {
 
         assert.fileContent([
@@ -174,7 +174,7 @@ describe('Webapp generator', function () {
 
     it('creates expected SASS and Bootstrap components', function (done) {
       runGen.withOptions(options).withPrompt({
-        features: ['includeSass', 'includeBootstrap']
+        features: ['includeSass', 'includeWoocss']
       }).on('end', function () {
 
         assert.fileContent([
