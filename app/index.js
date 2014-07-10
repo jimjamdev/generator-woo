@@ -33,7 +33,7 @@ module.exports = yeoman.generators.Base.extend({
     if (!this.options['skip-welcome-message']) {
       this.log(require('yosay')());
       this.log(chalk.magenta(
-        'Out of the box I include HTML5 Boilerplate, jQuery, and a ' +
+        'Out of the box I include HTML5 Boilerplate, jQuery/Zepto, and a ' +
         'Gruntfile.js to build your app.'
       ));
     }
@@ -43,8 +43,8 @@ module.exports = yeoman.generators.Base.extend({
       name: 'features',
       message: 'What more would you like?',
       choices: [{
-        name: 'Bootstrap',
-        value: 'includeBootstrap',
+        name: 'woocss',
+        value: 'includeWoocss',
         checked: true
       },{
         name: 'Sass',
@@ -98,6 +98,7 @@ module.exports = yeoman.generators.Base.extend({
     this.copy('gitattributes', '.gitattributes');
   },
 
+  // Bower dependencies
   bower: function () {
     var bower = {
       name: this._.slugify(this.appname),
@@ -105,9 +106,8 @@ module.exports = yeoman.generators.Base.extend({
       dependencies: {}
     };
 
-    if (this.includeBootstrap) {
-      var bs = 'bootstrap' + (this.includeSass ? '-sass-official' : '');
-      bower.dependencies[bs] = "~3.2.0";
+    if (this.includeWoocss) {
+      bower.dependencies.woocss = "*";
     } else {
       bower.dependencies.jquery = "~1.11.1";
     }
@@ -140,25 +140,15 @@ module.exports = yeoman.generators.Base.extend({
 
     // wire Bootstrap plugins
     if (this.includeBootstrap && !this.includeSass) {
-      var bs = 'bower_components/bootstrap/js/';
+      var bs = 'bower_components/woojs/';
 
       this.indexFile = this.appendFiles({
         html: this.indexFile,
         fileType: 'js',
         optimizedPath: 'scripts/plugins.js',
         sourceFileList: [
-          bs + 'affix.js',
-          bs + 'alert.js',
-          bs + 'dropdown.js',
-          bs + 'tooltip.js',
-          bs + 'modal.js',
-          bs + 'transition.js',
-          bs + 'button.js',
-          bs + 'popover.js',
-          bs + 'carousel.js',
-          bs + 'scrollspy.js',
-          bs + 'collapse.js',
-          bs + 'tab.js'
+          bs + 'clone.js',
+          bs + 'tabs.js'
         ],
         searchPath: '.'
       });
