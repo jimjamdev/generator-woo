@@ -75,7 +75,7 @@ module.exports = yeoman.generators.Base.extend({
       }
 
       this.includeSass = hasFeature('includeSass');
-      this.includeBootstrap = hasFeature('includeBootstrap');
+      this.includeWoocss = hasFeature('includeWoocss');
       this.includeModernizr = hasFeature('includeModernizr');
 
       this.includeLibSass = answers.libsass;
