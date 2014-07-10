@@ -234,10 +234,11 @@ module.exports = function (grunt) {
     },
 
     // Automatically inject Bower components into the HTML file
+    // Fix needed for woojs
     wiredep: {
       app: {
         ignorePath: /^<%= config.app %>\/|\.\.\//,
-        src: ['<%%= config.app %>/index.html']<% if (includeBootstrap) { %>,<% if (includeSass) { %>
+        src: ['<%%= config.app %>/index.html']<% if (includeWoocss) { %>,<% if (includeSass) { %>
         exclude: ['bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap.js']<% } else { %>
         exclude: ['bower_components/bootstrap/dist/js/bootstrap.js']<% } } %>
       }<% if (includeSass) { %>,
