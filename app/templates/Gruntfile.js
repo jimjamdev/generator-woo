@@ -367,7 +367,7 @@ module.exports = function (grunt) {
             '{,*/}*.html',
             'styles/fonts/{,*/}*.*'
           ]
-        }<% if (includeBootstrap) { %>, {
+        }<% if (includeWoocss) { %>, {
           expand: true,
           dot: true,
           cwd: '<% if (includeSass) {
