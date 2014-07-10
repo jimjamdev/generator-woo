@@ -138,7 +138,7 @@ module.exports = yeoman.generators.Base.extend({
       this
     );
 
-    // wire Bootstrap plugins
+    // wire Woojs plugins
     if (this.includeWoocss && !this.includeSass) {
       var bs = 'bower_components/woojs/';
 
