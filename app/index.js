@@ -43,7 +43,7 @@ module.exports = yeoman.generators.Base.extend({
       name: 'features',
       message: 'What more would you like?',
       choices: [{
-        name: 'woocss',
+        name: 'Woo Framework',
         value: 'includeWoocss',
         checked: true
       },{
@@ -107,7 +107,7 @@ module.exports = yeoman.generators.Base.extend({
     };
 
     if (this.includeWoocss) {
-      bower.dependencies.woocss = "*";
+      bower.dependencies.woocss = "https://github.com/jimmyjamieson/woocss";
     } else {
       bower.dependencies.jquery = "~1.11.1";
     }
