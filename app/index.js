@@ -108,6 +108,8 @@ module.exports = yeoman.generators.Base.extend({
 
     if (this.includeWoocss) {
       bower.dependencies.woocss = "https://github.com/jimmyjamieson/woocss";
+      bower.dependencies.woojs = "https://github.com/jimmyjamieson/woojs";
+      bower.dependencies.sassanimation = "https://github.com/jimmyjamieson/sassanimation";
     } else {
       bower.dependencies.jquery = "~1.11.1";
     }
